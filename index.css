@@ -266,6 +266,19 @@ body > h1 {
 	background-color: darkgrey;
 }
 
+#github {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    opacity: 50%;
+}
+#github:hover {
+opacity: 100%;
+}
+#github > img {
+    cursor: pointer;
+}
+  
 *[title],
 *[title] * {
 	cursor: help
