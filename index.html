@@ -1,0 +1,200 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="resources/favicon.ico" />
+    <title>Joseki Practice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="index.js" defer="defer"></script>
+    <script src="https://kit.fontawesome.com/60ca403337.js" crossorigin="anonymous"></script>
+    <link href="index.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+<h1>Joseki Practice</h1>
+<a id="about-link" href="about.html">?</a>
+<div id="content">
+    <div id="left-column">
+        <form>
+            <h2>Player</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="player" id="black" value="black" checked /><label for="black">Black</label><br />
+                </li>
+                <li>
+                    <input type="radio" name="player" id="white" value="white" /><label for="white">White</label>
+                </li>
+            </ul>
+            <h2>Starting Point</h2>
+            <a id="submit" href="#">Go!</a>
+            <ul>
+                <li>
+                    <input type="radio" name="startingPoint" id="empty" value="" checked /><label for="empty">Empty Board</label>
+                </li>
+                <li title="Demo board will not play out variations for you to practice against." aria-label="Demo board will not play out variations for you to practice against.">
+                    <input type="radio" name="startingPoint" id="demo" value="" /><label for="demo">Demo Board</label>
+                </li>
+                <li>
+                    <!-- ID is the move locations on the grid, Value is the IDs in Josekipedia -->
+                    <input type="radio" name="startingPoint" id="pd" value="40" /><label for="pd">4-4</label>
+                    <ul>
+                        <li>
+                            <span class="startingPointButton">
+                                <input type="radio" name="startingPoint" id="pdqc" value="40|453" /><label for="pdqc">3-3 Invasion</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="startingPointButton">
+                                <input type="radio" name="startingPoint" id="pdqf" value="40|42" /><label for="pdqf">Knight's Move Approach</label>
+                            </span>
+                            <ul>
+                                <li>
+                                    <span class="startingPointButton">
+                                        <input type="radio" name="startingPoint" id="pdqfqh" value="40|42|92" /><label for="pdqfqh">Close Pincer</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="startingPointButton">
+                                        <input type="radio" name="startingPoint" id="pdqfqi" value="40|42|1182" /><label for="pdqfqi">Loose Pincer</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="startingPointButton">
+                                        <input type="radio" name="startingPoint" id="pdqfph" value="40|42|93" /><label for="pdqfph">One-Space High Pincer</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="startingPointButton">
+                                        <input type="radio" name="startingPoint" id="pdqfpi" value="40|42|94" /><label for="pdqfpi">Two-Space High Pincer</label>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="qd" value="39" /><label for="qd">3-4</label>
+                    <ul>
+                        <li>
+                            <input type="radio" name="startingPoint" id="qdod" value="39|84" /><label for="qdod">One-Space High Approach</label>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="startingPoint" id="qdodocpdpcqe" value="39|84|85|544|545|547" /><label for="qdodocpdpcqe">Avalanche</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="startingPoint" id="qdodocpdpcqend" value="39|84|85|544|545|547|709" /><label for="qdodocpdpcqend">Small Avalanche</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="startingPoint" id="qdodocpdpcqencndmd" value="39|84|85|544|545|547|713|714|715" /><label for="qdodocpdpcqencndmd">Large Avalanche</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="startingPoint" id="qdodld" value="39|84|195" /><label for="qdodld">Magic Sword (1)</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="startingPoint" id="qdodldqepdpeoe" value="39|84|195|1621|10996|10997|10998" /><label for="qdodldqepdpeoe">Magic Sword (2)</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="radio" name="startingPoint" id="qdnd" value="39|706" /><label for="qdnd">Two-Space High Approach</label>
+                        </li>
+                        <li>
+                            <span class="startingPointButton">
+                                <input type="radio" name="startingPoint" id="qdttoc" value="39|2467|2555" /><label for="qdttoc">Small Enclosure</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="startingPointButton">
+                                <input type="radio" name="startingPoint" id="qdttnc" value="39|2467|2597" /><label for="qdttnc">Large Enclosure</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="startingPointButton">
+                                <input type="radio" name="startingPoint" id="qdttod" value="39|2467|2468" /><label for="qdttod">One-Space High Enclosure</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="startingPointButton">
+                                <input type="radio" name="startingPoint" id="qdttnd" value="39|2467|12624" /><label for="qdttnd">Two-Space High Enclosure</label>
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="qe" value="248" /><label for="qe">3-5</label>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="qc" value="41" /><label for="qc">3-3</label>
+                </li>
+            </ul>
+            <b>Fuseki</b>
+            <ul style="margin-top: .5em;">
+                <li>
+                    <input type="radio" name="startingPoint" id="pddppqddqk" value="40|35417|35974|36237|58561" /><label for="pddppqddqk">Chinese</label>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="pddpqpddfqcnkq" value="40|35417|35470|36178|48690|146105" /><label for="pddpqpddfqcnkq">Mini Chinese</label>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="pddpqpddfqcnlq" value="40|35417|35470|36178|48690|247318" /><label for="pddpqpddfqcnlq">Micro Chinese</label>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="pddppqddfqcnjp" value="40|35417|35974|36237|39621|43860|43861" /><label for="pddppqddfqcnjp">Kobayashi</label>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="pdttppttpj" value="40|2476|17819|24535|49086" /><label for="pdttppttpj">Sanrensei</label>
+                </li>
+                <li>
+                    <input type="radio" name="startingPoint" id="pdttqpttoq" value="40|2476|168642|168643|168644" /><label for="pdttqpttoq">Orthodox</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div id="middle-column">
+        <div id="board-control">
+            <span>
+                <a id="undo" href="#">Undo</a>
+                <a id="redo" href="#">Redo</a>
+            </span>
+            <span>
+                <a id="pass" href="#">Pass</a>
+            </span>
+        </div>
+        <div id="flash-messages"></div>
+        <div id="x-coordinates"></div>
+        <div id="y-coordinates"></div>
+        <table id="board"></table>
+        <div id="move-info">
+            <h2>Move Info</h2>
+            <div id="josekipedia-link">[<a href="http://www.josekipedia.com/">josekipedia</a>]</div>
+            <br/>
+            <div id="move-info-content">N/A</div>
+        </div>
+    </div>
+    <div id="right-column">
+        <div id="filters">
+            <ul>
+                <li><input type="checkbox" name="ideal" id="ideal" checked/><label for="ideal">Allow Ideal Moves</label></li>
+                <li><input type="checkbox" name="good" id="good"/><label for="good">Allow Good Moves</label></li>
+                <li><input type="checkbox" name="bad" id="bad"/><label for="bad">Allow Bad Moves</label></li>
+                <li><input type="checkbox" name="trick" id="trick"/><label for="trick">Allow Trick Moves</label></li>
+                <li><input type="checkbox" name="question" id="question"/><label for="question">Allow Question Moves</label></li>
+                <br/>
+                <li title="This helps limit the number of weird moves, like fuseki plays." aria-label="This helps limit the number of weird moves, like fuseki plays.">
+                    <input type="checkbox" name="firstTen" id="firstTen" checked/><label for="firstTen">First Ten Variations Only</label>
+                </li>
+                <br/>
+                <li title="Sometimes Josekipedia will want to show you what happens if the other player tenukis. Checking this will make it only pass if passing is joseki." aria-label="Sometimes Josekipedia will want to show you what happens <i>if</i> the other player tenukis. Checking this will make it only pass if it's joseki.">
+                    <input type="checkbox" name="noPass" id="noPass"/><label for="noPass">Only Pass If Joseki</label>
+                </li>
+                <br/>
+                <li>
+                    <input type="checkbox" name="showMoveInfo" id="showMoveInfo" checked/><label for="showMoveInfo">Show Move Info</label>
+                </li>
+            </ul>
+        </div>
+        <div id="other-controls">
+            <a id="highlightMoves" href="#">Highlight Moves</a>
+        </div>
+    </div>
+</div>
+</body>

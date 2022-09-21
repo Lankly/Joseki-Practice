@@ -1,0 +1,137 @@
+body {
+    background: url(resources/bg.gif) repeat top left;
+
+    height: 150vh;
+}
+body > h1 {
+	text-align: center;
+
+	background-color: rgba(256,256,256,.85);
+
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5em;
+    border-radius: .1em;
+}
+#content {
+	background-color: white;
+	padding:1em;
+	border-radius: .25em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1, #content, #content > div {
+    width: max(600px, 50vw);
+}
+
+#back-button {
+	position: fixed;
+	top: .5em;
+	left: .5em;
+
+	background-color: lightgrey;
+	color: white;
+
+	text-decoration: none;
+
+	padding-left: .5em;
+	padding-right: .5em;
+	padding-top: .25em;
+	padding-bottom: .25em;
+	border-radius: .5em;
+}
+#back-button:hover {
+	background-color: darkgrey;
+}
+
+/* Profile Card Styles */
+
+.profileCard {
+    width: 600px;
+    border: 1px solid black;
+    margin: 0 auto;
+    background: #fff;
+}
+    
+.img-container {
+    height: 200px;
+    border-bottom: 1px solid black;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: skyblue;
+}
+    
+.profile-img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 150px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+    
+.profileCard .profile-name {
+    padding: 10px;
+}
+    
+.profileCard .profile-name p {
+    font-size: 18px;
+    position: relative;
+    top: 40px;
+}
+    
+.profileCard .profile-name .twitter-handle {
+    font-size: 15px;
+    color: rgb(90, 90, 90);
+}
+    
+.profileCard .profile-bio {
+    padding: 10px;
+    position: relative;
+    top: 35px;
+    font-size: 15px;
+}
+    
+.profileCard .location-and-url {
+    font-size: 15px;
+    color: rgb(90, 90, 90);
+    padding: 40px 10px 10px 10px;
+}
+    
+.profileCard .follow-count {
+    font-size: 15px;
+    color: rgb(90, 90, 90);
+    padding: 10px;
+}
+    
+.count {
+    font-weight: bold;
+    color: black;
+    padding-right: 2px;
+}
+    
+.following,
+.followers {
+    display: inline-block;
+    padding-right: 8px;
+}
+    
+.location,
+.url {
+    display: inline-block;
+}
+
+.name {
+    margin-bottom: 0;
+}
+.profile-bio, .location-and-url, .twitter-handle, .follow-count {
+    margin: 0;
+}
