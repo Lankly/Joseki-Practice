@@ -322,6 +322,12 @@ function returnToMove(event) {
     let cell = $(event.target)
     let coord = cell.attr('id')
 
+    // If this was the most recent move, simply undo one time
+    if (movePath && movePath.slice(-2) === coord) {
+        return undo()
+    }
+
+    // Otherwise, undo until we reach this move
     while (movePath && movePath.slice(-2) !== coord) {
         undo()
     }
