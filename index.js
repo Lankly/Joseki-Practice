@@ -69,7 +69,6 @@ function createTable() {
     allCells.mouseup(placeStone)
     allCells.mouseenter(showStonePreview)
     allCells.mouseleave(hideStonePreview)
-    allCells.contextmenu(returnToMove)
     moveHistory = []
     currentMoveIndex = -1
     $('.flash-message').remove()
@@ -217,6 +216,8 @@ function setMoveInfo(moveJosekiInfo) {
 }
 
 function placeStone(event) {
+    if (event && event.which && event.which !== 1) { return } // Left-click only
+
     let cell = $(event.target)
     let stone = cell.find(".stone")
     let currentPlayerIsPlayer = $('input[name="player"]:checked').attr('id') === currentPlayer && !placingInitialStones
@@ -228,6 +229,7 @@ function placeStone(event) {
     stone.removeClass("preview")
     cell.removeClass("clickable")
     cell.off('mouseup mouseenter mouseleave')
+    cell.contextmenu(returnToMove)
     movePath += cell.attr('id')
 
     let moveCoord = cell.attr('id')
@@ -451,8 +453,10 @@ function restoreFunctionality() {
     validCells.mouseleave(hideStonePreview)
     
     let allCells = $('td')
+    let allPlayedCells = $('td:not(.clickable)')
 
-    allCells.contextmenu(returnToMove)
+    allCells.off('contextmenu')
+    allPlayedCells.contextmenu(returnToMove)
 }
 
 function updateJosekipediaLink() {
